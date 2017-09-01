@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bean头部 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd              
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <!-- 激活@Controller模式 -->
+    <mvc:annotation-driven />
+    <!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 需要更改 -->
+    <context:component-scan base-package="com.zhou.base.controller" />
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+    
+    <!-- 添加文件上传支持  -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"    
+        p:defaultEncoding="UTF-8"    
+        p:maxUploadSize="5400000"    
+        p:uploadTempDir="/WEB-INF/uploadTmp"    
+     /> 
+    
+<!--     Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory-->    
+ 	<mvc:resources mapping="/resource/**" location="/WEB-INF/resource/" />
+    
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+        	<mvc:mapping path="/"/>
+        	<mvc:exclude-mapping path="/resource/**"/>
+        	<bean class="com.zhou.base.interceptor.LogInterceptor"/>
+        </mvc:interceptor>
+    	<mvc:interceptor>
+        	<mvc:mapping path="/**"/>
+        	<mvc:exclude-mapping path="/login"/>
+        	<mvc:exclude-mapping path="/resource/**"/>
+        	<bean class="com.zhou.base.annotation.ValidateInterceptor"/>
+        </mvc:interceptor>
+        
+        
+    </mvc:interceptors>
+</beans>

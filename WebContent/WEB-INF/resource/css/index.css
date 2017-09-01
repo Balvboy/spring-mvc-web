@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+body {
+	padding-top: 50px;
+}
+
+
+
+.carousel {
+	height: 500px;
+	background-color: #000;
+}
+
+
+.carousel .item {
+	height: 500px;
+	background-color: #000;
+}
+
+.carousel img {
+	width: 100%;
+}
+
+.carousel-caption h1{
+	font-size:70px;
+}
+
+.carousel-caption p {
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+
+.margin-b-50{
+	margin-bottom:50px;
+}
+
+
+#divider {
+	margin: 40px 0;
+}
+
+/* #product {
+	margin-bottom: 50px;
+} */
+
+#product .col-md-3 {
+	padding: 0px 0;
+}
+
+#hotnews .col-md-3 {
+	padding: 0px 0;
+}
+
+#action .col-md-3 {
+	padding: 0px 0;
+}
+
+.product_show {
+	/* 当这个div里面的图片大小超过 这个div本身的大小的时候，把超出的部分隐藏掉  */
+	overflow: hidden;
+}
+
+.product_show img {
+	width: 100%;
+	position: relative;
+}
+
+.wordOnPic {
+	/* 指定这个div的位置为绝对定位位置    */
+	position: absolute;
+	/* 绝对位置的坐标为距离这个父类容器的上面0px的位置  ，也就是和父类容器的上面重合   */
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	line-height: 30px;
+	display: none;
+	background-color: #000;
+	/* 透明度   */
+	opacity: 0.5;
+}
+
+.wordOnPic h1 {
+	color: #fff;
+	margin-left: 15px;
+}
+
+.wordOnPic p {
+	color: #fff;
+	/* float:right; */
+	/* margin-right: 15px; */
+	font-size:24px;
+	position: absolute;
+	bottom:10px;
+	right:20px;
+}
+
+.city img {
+	width: 100%;
+	max-height: 70px;
+	margin-top: 0px;
+}
+
+.about {
+	text-align: center;
+}
+
+.about h1 {
+	margin-bottom: 100px;
+}
+
+.logo h1 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 65px;
+	line-height: 0.87;
+	font-weight: bold;
+}
+
+.logo h1 span {
+	display: block;
+}
+
+.title h4 {
+	font-family: "Microsoft YaHei", "宋体", "Helvetica Neue", Helvetica, Arial,
+		sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 4px;
+	text-indent: 6px;
+	color: #2f2e2e;
+	text-align: center;
+}
+
+.title div {
+	height: 3px;
+	width: 40px;
+	background-color: #f7931d;
+	margin: 20px auto 35px auto;
+}
+
+footer {
+	background-color: #2f2e2e;
+	color: #999;
+	padding: 10px 0;
+	line-height: 1.6;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+#wechat{
+	text-align: center;
+}
+
+#wechat img {
+    margin: 70px 0 20px 0;
+    width: 180px;
+    height: 180px;
+}
+
+#wechat p {
+    font-size: 16px;
+    margin: 5px;
+}
+
+.modal-body img{
+	max-width: 100%;
+}
+
+video{
+	max-width: 100%;
+}
+
+@media (min-width: 768px){
+	.modal-dialog {
+  		width: 1000px;
+	}
+}
