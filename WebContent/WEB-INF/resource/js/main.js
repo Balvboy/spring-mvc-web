@@ -246,3 +246,6 @@ require(['jquery','bootstrap'], function ($){
 	})
 });
 
+
+
+
