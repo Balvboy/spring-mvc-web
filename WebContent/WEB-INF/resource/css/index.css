@@ -19,6 +19,15 @@ body {
 
 .carousel img {
 	width: 100%;
+	max-width: 1000%
+}
+
+@media (max-width: 799px){
+	.carousel img{
+		width : auto;
+		height: 100%;
+		max-width: 1000%
+	}
 }
 
 .carousel-caption h1{
